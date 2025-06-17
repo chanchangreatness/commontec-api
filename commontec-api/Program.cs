@@ -1,12 +1,9 @@
-using commontec_api.EndPoints;
+using ComonTecApi.EndPoints;
+using ComonTecApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthentication();
-builder.Services.AddAuthorization();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.ConfigureServices();
 
 var app = builder.Build();
 

@@ -1,12 +1,12 @@
 ﻿using System.Net;
 
-namespace commontec_api.EndPoints
+namespace ComonTecApi.EndPoints
 {
     public static class AuthEndPoint
     {
         public static IEndpointRouteBuilder MapAuthEndpoint(this IEndpointRouteBuilder app)
         {
-            var apiGroup = app.MapGroup("auth");
+            var apiGroup = app.MapGroup("auth").WithTags("Auth");
 
             apiGroup.MapPost("/register", () =>
             {
@@ -18,7 +18,7 @@ namespace commontec_api.EndPoints
                 return TypedResults.Ok();
             });
 
-            return app;
+            return apiGroup;
         }
     }
 }

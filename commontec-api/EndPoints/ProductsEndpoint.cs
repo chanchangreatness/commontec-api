@@ -1,10 +1,10 @@
-﻿namespace commontec_api.EndPoints
+﻿namespace ComonTecApi.EndPoints
 {
     public static class ProductsEndpoint
     {
         public static IEndpointRouteBuilder MapProductsEndpoint(this IEndpointRouteBuilder app)
         {
-            var apiGroup = app.MapGroup("products");
+            var apiGroup = app.MapGroup("products").WithTags("Products");
 
             apiGroup.MapPost("/", () =>
             {
@@ -31,7 +31,7 @@
                 return TypedResults.Ok($"Deleted {id}");
             });
 
-            return app;
+            return apiGroup;
         }
     }
 }

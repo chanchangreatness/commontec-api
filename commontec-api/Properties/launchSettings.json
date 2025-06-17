@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "commontec-api": {
+    "ComonTecApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
