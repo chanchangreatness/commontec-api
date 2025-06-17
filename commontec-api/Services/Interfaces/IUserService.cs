@@ -1,4 +1,4 @@
-﻿namespace commontec_api.Services.Interfaces
+﻿namespace ComonTecApi.Services.Interfaces
 {
     public interface IUserService
     {

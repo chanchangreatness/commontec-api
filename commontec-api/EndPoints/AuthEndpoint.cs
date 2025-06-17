@@ -1,4 +1,6 @@
 ﻿using System.Net;
+using ComonTecApi.Models;
+using ComonTecApi.Services.Interfaces;
 
 namespace ComonTecApi.EndPoints
 {
@@ -8,15 +10,9 @@ namespace ComonTecApi.EndPoints
         {
             var apiGroup = app.MapGroup("auth").WithTags("Auth");
 
-            apiGroup.MapPost("/register", () =>
-            {
-                return TypedResults.Ok();
-            });
+            apiGroup.MapPost("/register", (UserDto payload, IAuthService service) => service.RegisterUser(payload));
 
-            apiGroup.MapPost("/login", () => 
-            {
-                return TypedResults.Ok();
-            });
+            apiGroup.MapPost("/login", (UserDto payload, IAuthService service) => service.Login(payload));
 
             return apiGroup;
         }

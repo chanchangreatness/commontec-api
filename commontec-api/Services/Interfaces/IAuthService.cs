@@ -1,7 +1,12 @@
-﻿namespace commontec_api.Services.Interfaces
+﻿using ComonTecApi.Entities;
+using ComonTecApi.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
+
+namespace ComonTecApi.Services.Interfaces
 {
     public interface IAuthService
     {
-        void Register(string username, string password);
+        Task<Results<Ok, Conflict>> RegisterUser(UserDto request);
+        Task<Results<Ok<string>, BadRequest>> Login(UserDto request);
     }
 }

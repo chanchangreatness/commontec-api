@@ -1,6 +1,6 @@
-﻿using commontec_api.Services.Interfaces;
+﻿using ComonTecApi.Services.Interfaces;
 
-namespace commontec_api.Services
+namespace ComonTecApi.Services
 {
     public class UserService : IUserService
     {
