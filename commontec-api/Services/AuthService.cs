@@ -19,11 +19,11 @@ namespace ComonTecApi.Services
             _jwtService = jwtService;
         }
 
-        public async Task<Results<Ok, Conflict>> RegisterUser(UserDto request)
+        public async Task<Results<Ok<string>, Conflict<string>>> RegisterUser(UserDto request)
         {
             if (await _userRepository.IsUserExist(request.Username))
             {
-                return TypedResults.Conflict();
+                return TypedResults.Conflict("Username already exists");
             }
 
             var user = new User();
@@ -35,23 +35,23 @@ namespace ComonTecApi.Services
 
             await _userRepository.AddUserAsync(user);
 
-            return TypedResults.Ok();
+            return TypedResults.Ok("Successfully created User");
         }
 
-        public async Task<Results<Ok<string>, BadRequest>> Login(UserDto request)
+        public async Task<Results<Ok<string>, BadRequest<string>>> Login(UserDto request)
         {
             var user = await _userRepository.GetUserByUsername(request.Username);
 
             if (user is null)
             {
-                return TypedResults.BadRequest();
+                return TypedResults.BadRequest("Invalid credentials");
             }
 
             var passwordHasher = new PasswordHasher<User>();
 
             if (passwordHasher.VerifyHashedPassword(user, user.Password, request.Password) == PasswordVerificationResult.Failed)
             {
-                return TypedResults.BadRequest();
+                return TypedResults.BadRequest("Invalid credentials");
             }
 
             return TypedResults.Ok(_jwtService.CreateToken(user));

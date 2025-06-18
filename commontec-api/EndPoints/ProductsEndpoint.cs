@@ -1,4 +1,4 @@
-﻿namespace ComonTecApi.EndPoints
+﻿namespace ComonTecApi.Endpoints
 {
     public static class ProductsEndpoint
     {

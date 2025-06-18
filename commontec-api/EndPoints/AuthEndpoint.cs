@@ -2,9 +2,9 @@
 using ComonTecApi.Models;
 using ComonTecApi.Services.Interfaces;
 
-namespace ComonTecApi.EndPoints
+namespace ComonTecApi.Endpoints
 {
-    public static class AuthEndPoint
+    public static class AuthEndpoint
     {
         public static IEndpointRouteBuilder MapAuthEndpoint(this IEndpointRouteBuilder app)
         {

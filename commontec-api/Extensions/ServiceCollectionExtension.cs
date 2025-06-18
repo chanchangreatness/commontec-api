@@ -1,20 +1,71 @@
-﻿using ComonTecApi.Services;
+﻿using System.Text;
 using ComonTecApi.Data;
-using ComonTecApi.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using ComonTecApi.Repositories.Interfaces;
 using ComonTecApi.Repositories;
+using ComonTecApi.Repositories.Interfaces;
+using ComonTecApi.Services;
+using ComonTecApi.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace ComonTecApi.Extensions
 {
     public static class ServiceCollectionExtension
     {
-        public static IServiceCollection ConfigureServices(this IServiceCollection services)
+        public static IServiceCollection ConfigureServices(this IServiceCollection services, ConfigurationManager configuration)
         {
-            services.AddAuthentication().AddJwtBearer();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = configuration["Authentication:Schemes:ValidIssuer"],
+                        ValidAudiences = configuration.GetSection("Authentication:Schemes:Bearer:ValidAudiences").Get<string[]>(),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Authentication:Schemes:IssuerKey"]!))
+                    };
+                });
+
             services.AddAuthorization();
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(options =>
+            {
+                var securityScheme = new OpenApiSecurityScheme()
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Add Bearer token here",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    Scheme = "bearer"
+                };
+
+                var securityRequirement = new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,
+                
+                        },
+                        new List<string>()
+                    }
+                };
+
+                options.AddSecurityDefinition("Bearer", securityScheme);
+                options.AddSecurityRequirement(securityRequirement);
+            });
 
             services.AddDbContext<AppDbContext>(option => option.UseInMemoryDatabase("ComontecSchema"));
 

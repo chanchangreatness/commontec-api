@@ -1,4 +1,6 @@
-﻿namespace ComonTecApi.EndPoints
+﻿using Microsoft.AspNetCore.Authorization;
+
+namespace ComonTecApi.Endpoints
 {
     public static class UsersEndpoint
     {
@@ -6,7 +8,8 @@
         {
             var apiGroup = app.MapGroup("users").WithTags("Users");
 
-            apiGroup.MapPost("/me", () =>
+            apiGroup.MapPost("/me",
+                [Authorize] () =>
             {
                 return TypedResults.Ok();
             });
