@@ -1,4 +1,5 @@
-﻿using ComonTecApi.Entities;
+﻿using Bogus;
+using ComonTecApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ComonTecApi.Data

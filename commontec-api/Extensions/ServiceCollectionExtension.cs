@@ -34,6 +34,12 @@ namespace ComonTecApi.Extensions
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(options =>
             {
+                options.SwaggerDoc("v1", new OpenApiInfo 
+                {
+                    Title = "Comontech API",
+                    Version = "v1"
+                });
+
                 var securityScheme = new OpenApiSecurityScheme()
                 {
                     In = ParameterLocation.Header,
@@ -65,13 +71,18 @@ namespace ComonTecApi.Extensions
 
                 options.AddSecurityDefinition("Bearer", securityScheme);
                 options.AddSecurityRequirement(securityRequirement);
+
+                options.EnableAnnotations();
             });
 
             services.AddDbContext<AppDbContext>(option => option.UseInMemoryDatabase("ComontecSchema"));
 
             services.AddScoped<IJwtService, JwtService>();
-            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IProductService, ProductService>();
+
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }
