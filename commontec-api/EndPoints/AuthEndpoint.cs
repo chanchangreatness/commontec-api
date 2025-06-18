@@ -1,6 +1,5 @@
-﻿using System.Net;
-using ComonTecApi.Models;
-using ComonTecApi.Services.Interfaces;
+﻿using ComonTecApi.Domain.IServices;
+using ComonTecApi.Domain.Models;
 
 namespace ComonTecApi.Endpoints
 {

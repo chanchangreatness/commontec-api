@@ -16,4 +16,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ComonTecApi.Application\ComonTecApi.Application.csproj" />
+    <ProjectReference Include="..\ComonTecApi.Infrastracture\ComonTecApi.Infrastracture.csproj" />
+  </ItemGroup>
+
 </Project>

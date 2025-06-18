@@ -1,6 +1,6 @@
-using ComonTecApi.Data;
 using ComonTecApi.Endpoints;
-using ComonTecApi.Extensions;
+using ComonTecApi.Infrastracture;
+using ComonTecApi.Infrastracture.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +20,7 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(opt => 
+    app.UseSwagger(opt =>
     {
         opt.OpenApiVersion = Microsoft.OpenApi.OpenApiSpecVersion.OpenApi2_0;
     });

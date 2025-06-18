@@ -1,9 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComonTecApi", "commontec-api\ComonTecApi.csproj", "{179B652A-5545-476A-A80B-6C7F2ECA45CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E3C83B7-28EF-407C-B706-EEE2AC0B9958} = {5E3C83B7-28EF-407C-B706-EEE2AC0B9958}
+		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE} = {60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComonTecApi.Application", "ComonTecApi.Application\ComonTecApi.Application.csproj", "{5E3C83B7-28EF-407C-B706-EEE2AC0B9958}"
+	ProjectSection(ProjectDependencies) = postProject
+		{419D7643-A9F6-41F6-8316-63D05F79DCD8} = {419D7643-A9F6-41F6-8316-63D05F79DCD8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComonTecApi.Domain", "ComonTecApi.Domain\ComonTecApi.Domain.csproj", "{419D7643-A9F6-41F6-8316-63D05F79DCD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComonTecApi.Infrastracture", "ComonTecApi.Infrastracture\ComonTecApi.Infrastracture.csproj", "{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E3C83B7-28EF-407C-B706-EEE2AC0B9958} = {5E3C83B7-28EF-407C-B706-EEE2AC0B9958}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +31,18 @@ Global
 		{179B652A-5545-476A-A80B-6C7F2ECA45CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{179B652A-5545-476A-A80B-6C7F2ECA45CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{179B652A-5545-476A-A80B-6C7F2ECA45CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3C83B7-28EF-407C-B706-EEE2AC0B9958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3C83B7-28EF-407C-B706-EEE2AC0B9958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3C83B7-28EF-407C-B706-EEE2AC0B9958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3C83B7-28EF-407C-B706-EEE2AC0B9958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419D7643-A9F6-41F6-8316-63D05F79DCD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419D7643-A9F6-41F6-8316-63D05F79DCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419D7643-A9F6-41F6-8316-63D05F79DCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419D7643-A9F6-41F6-8316-63D05F79DCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

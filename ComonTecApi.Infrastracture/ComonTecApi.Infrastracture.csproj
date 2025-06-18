@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Bogus" Version="35.6.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.17" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.6" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ComonTecApi.Application\ComonTecApi.Application.csproj" />
+    <ProjectReference Include="..\ComonTecApi.Domain\ComonTecApi.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

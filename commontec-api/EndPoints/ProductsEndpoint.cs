@@ -1,5 +1,5 @@
-﻿using ComonTecApi.Models;
-using ComonTecApi.Services.Interfaces;
+﻿using ComonTecApi.Domain.IServices;
+using ComonTecApi.Domain.Models;
 
 namespace ComonTecApi.Endpoints
 {
@@ -22,7 +22,7 @@ namespace ComonTecApi.Endpoints
                 .WithName("Get Product by Id");
 
             apiGroup
-                .MapPut("/{id}", (int productId, string name, string description, int quantity, IProductService service) 
+                .MapPut("/{id}", (int productId, string name, string description, int quantity, IProductService service)
                     => service.UpdateProductAsync(productId, name, description, quantity))
                 .WithName("Update Product by Id");
 
