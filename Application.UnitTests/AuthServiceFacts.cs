@@ -32,7 +32,7 @@ namespace Application.UnitTests
             var result = await _mockAuthService.Object.RegisterUser(user);
             var resultResponseMsg = ((Ok<string>)result.Result).Value;
 
-            Assert.IsType<Results<Ok<string>, Conflict<string>>>(result);
+            Assert.True(result.Result is Ok<string>, "Expected Ok<string> result");
             Assert.Equal(responseString, resultResponseMsg);
         }
 
@@ -68,7 +68,7 @@ namespace Application.UnitTests
             var result = await _mockAuthService.Object.Login(userDto);
             var resultResponseMsg = ((Ok<string>)result.Result).Value;
 
-            Assert.IsType<Results<Ok<string>, BadRequest<string>>>(result);
+            Assert.True(result.Result is Ok<string>, "Expected Ok<string> result");
             Assert.Equal(expectedToken, resultToken);
             Assert.Equal(resultResponseMsg, expectedToken);
         }
