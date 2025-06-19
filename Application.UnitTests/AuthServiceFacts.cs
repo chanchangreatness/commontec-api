@@ -1,11 +1,8 @@
 ﻿using ComonTecApi.Application.IServices;
-using ComonTecApi.Application.Services;
 using ComonTecApi.Domain.Entities;
 using ComonTecApi.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Moq;
 
 namespace Application.UnitTests
@@ -14,7 +11,6 @@ namespace Application.UnitTests
     {
         private Mock<IAuthService> _mockAuthService = new Mock<IAuthService>();
         private Mock<IJwtService> _mockIJwtService = new Mock<IJwtService>();
-        private Mock<IConfiguration> _mockConfiguration = new Mock<IConfiguration>();
 
         [Fact]
         public async Task ShouldRegisterUser()
@@ -56,7 +52,7 @@ namespace Application.UnitTests
                 Password = userDto.Password
             };
 
-            var expectedToken = "thisisatesttoken";          
+            var expectedToken = "thisisatesttoken";
 
             var okResult = TypedResults.Ok(expectedToken);
 
