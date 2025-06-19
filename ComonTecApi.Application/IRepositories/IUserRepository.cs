@@ -1,6 +1,6 @@
 ﻿using ComonTecApi.Domain.Entities;
 
-namespace ComonTecApi.Domain.IRepositories
+namespace ComonTecApi.Application.IRepositories
 {
     public interface IUserRepository
     {

@@ -2,7 +2,7 @@
 using ComonTecApi.Domain.Models.Response;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace ComonTecApi.Domain.IServices
+namespace ComonTecApi.Application.IServices
 {
     public interface IProductService
     {

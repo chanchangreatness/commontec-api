@@ -1,7 +1,7 @@
 ﻿using ComonTecApi.Domain.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace ComonTecApi.Domain.IServices
+namespace ComonTecApi.Application.IServices
 {
     public interface IAuthService
     {

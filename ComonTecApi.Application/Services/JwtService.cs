@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using ComonTecApi.Domain.Entities;
-using ComonTecApi.Domain.IServices;
+using ComonTecApi.Application.IServices;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 

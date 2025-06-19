@@ -1,4 +1,4 @@
-﻿using ComonTecApi.Domain.IServices;
+﻿using ComonTecApi.Application.IServices;
 using ComonTecApi.Domain.Models;
 
 namespace ComonTecApi.Endpoints

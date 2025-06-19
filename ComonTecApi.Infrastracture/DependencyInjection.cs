@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using ComonTecApi.Application.Services;
-using ComonTecApi.Domain.IRepositories;
-using ComonTecApi.Domain.IServices;
+using ComonTecApi.Application.IServices;
+using ComonTecApi.Application.IRepositories;
 using ComonTecApi.Infrastracture.Data;
 using ComonTecApi.Infrastracture.Repositories;
 using ComonTecApi.Services;

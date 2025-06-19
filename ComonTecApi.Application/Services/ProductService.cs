@@ -1,5 +1,5 @@
-﻿using ComonTecApi.Domain.IRepositories;
-using ComonTecApi.Domain.IServices;
+﻿using ComonTecApi.Application.IServices;
+using ComonTecApi.Application.IRepositories;
 using ComonTecApi.Domain.Models;
 using ComonTecApi.Domain.Models.Response;
 using Microsoft.AspNetCore.Http;

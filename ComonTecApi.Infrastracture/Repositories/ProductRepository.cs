@@ -1,6 +1,6 @@
 ﻿using ComonTecApi.Application.Extensions;
 using ComonTecApi.Domain.Entities;
-using ComonTecApi.Domain.IRepositories;
+using ComonTecApi.Application.IRepositories;
 using ComonTecApi.Domain.Models;
 using ComonTecApi.Infrastracture.Data;
 using Microsoft.EntityFrameworkCore;

@@ -1,7 +1,7 @@
 ﻿using ComonTecApi.Domain.Entities;
 using ComonTecApi.Domain.Models;
 
-namespace ComonTecApi.Domain.IRepositories
+namespace ComonTecApi.Application.IRepositories
 {
     public interface IProductRepository
     {

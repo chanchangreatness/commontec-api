@@ -1,6 +1,6 @@
 ﻿using ComonTecApi.Domain.Entities;
 
-namespace ComonTecApi.Domain.IServices
+namespace ComonTecApi.Application.IServices
 {
     public interface IJwtService
     {

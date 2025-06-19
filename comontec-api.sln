@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComonTecApi.Infrastracture"
 		{5E3C83B7-28EF-407C-B706-EEE2AC0B9958} = {5E3C83B7-28EF-407C-B706-EEE2AC0B9958}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UnitTests", "Application.UnitTests\Application.UnitTests.csproj", "{FB8B188F-0D96-41A6-87E9-62C738DF1723}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,9 +47,16 @@ Global
 		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60E8FD72-378E-4D33-8E19-4CCD9AEE64DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8B188F-0D96-41A6-87E9-62C738DF1723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8B188F-0D96-41A6-87E9-62C738DF1723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8B188F-0D96-41A6-87E9-62C738DF1723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8B188F-0D96-41A6-87E9-62C738DF1723}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB8B188F-0D96-41A6-87E9-62C738DF1723} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32072138-4475-44A5-9C07-02B8A875A961}
